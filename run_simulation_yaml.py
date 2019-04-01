@@ -128,11 +128,12 @@ def run_uuid(ioc_filename):
                         logging.info(data)
                         write_row(time_to_log, rule_name, action, mitre_phase, mitre_tech, windows)
 
-                        '''
                         # if you want to post to slack uncomment this and set the slack hook above
-                        json = {'text': "Automated Purple Team --> Simulation: {} | Action: {}  | Host: {} | Execution Time: {} UTC".format(rule_name,action,windows,datetime.datetime.utcnow())}
-                        post_to_slack(hook,json)
                         '''
+                        json_data = {'text': "Automated Purple Team --> Simulation: {} | Action: {}  | Host: {} | Execution Time: {} UTC".format(rule_name,action,windows,datetime.datetime.utcnow())}
+                        post_to_slack(hook,json_data)
+                        '''
+                        
                         time.sleep(randint(2, 30))
                     except Exception as e:
                         print(e)
@@ -150,11 +151,12 @@ def run_uuid(ioc_filename):
                         data = json.dumps({'time': time_to_log, 'rule_name': rule_name, 'action': action, 'mitre_attack_phase': mitre_phase, 'mitre_attack_technique': mitre_tech, 'host': osx})
                         logging.info(data)
                         write_row(time_to_log, rule_name, action, mitre_phase, mitre_tech, osx)
+                        
                         '''
-                        # if you want to post to slack uncomment this and set the slack hook above
-                        json = {'text': "Automated Purple Team --> Simulation: {} | Action: {}  | Host: {} | Execution Time: {} UTC".format(rule_name,action,osx,datetime.datetime.utcnow())}
-                        post_to_slack(hook,json)
+                        json_data = {'text': "Automated Purple Team --> Simulation: {} | Action: {}  | Host: {} | Execution Time: {} UTC".format(rule_name,action,osx,datetime.datetime.utcnow())}
+                        post_to_slack(hook,json_data)
                         '''
+                        
                         time.sleep(randint(2, 30))
                     except Exception as e:
                         print(e)
@@ -172,11 +174,13 @@ def run_uuid(ioc_filename):
                         data = json.dumps({'time': time_to_log, 'rule_name': rule_name, 'action': action, 'mitre_attack_phase': mitre_phase, 'mitre_attack_technique': mitre_tech, 'host': linux})
                         logging.info(data)
                         write_row(time_to_log, rule_name, action, mitre_phase, mitre_tech, linux)
+                        
                         '''
                         # if you want to post to slack uncomment this and set the slack hook above
-                        json = {'text': "Automated Purple Team --> Simulation: {} | Action: {}  | Host: {} | Execution Time: {} UTC".format(rule_name,action,osx,datetime.datetime.utcnow())}
-                        post_to_slack(hook,json)
+                        json_data = {'text': "Automated Purple Team --> Simulation: {} | Action: {}  | Host: {} | Execution Time: {} UTC".format(rule_name,action,osx,datetime.datetime.utcnow())}
+                        post_to_slack(hook,json_data)
                         '''
+                        
                         time.sleep(randint(2, 30))
                     except Exception as e:
                         print(e)
@@ -194,11 +198,13 @@ def run_uuid(ioc_filename):
                         data = json.dumps({'time': time_to_log, 'rule_name': rule_name, 'action': action, 'mitre_attack_phase': mitre_phase, 'mitre_attack_technique': mitre_tech, 'host': kali})
                         logging.info(data)
                         write_row(time_to_log, rule_name, action, mitre_phase, mitre_tech, kali)
+                        
                         '''
                         #if you want to post to slack uncomment this and set the slack hook above
-                        #json = {'text': "Automated Purple Team --> Simulation: {} | Action: {}  | Host: {} | Execution Time: {} UTC".format(rule_name,action,osx,datetime.datetime.utcnow())}
-                        #post_to_slack(hook,json)
+                        json_data = {'text': "Automated Purple Team --> Simulation: {} | Action: {}  | Host: {} | Execution Time: {} UTC".format(rule_name,action,osx,datetime.datetime.utcnow())}
+                        post_to_slack(hook,json_data)
                         '''
+                        
                         time.sleep(randint(2, 30))
                     except Exception as e:
                         print(e)
